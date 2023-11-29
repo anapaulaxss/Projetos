@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>CADASTRE-SE</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Cadastre-se</div>
+        <form name="form1" id="form1" action="cadastroBD.jsp" method="post">
+            <div class="user-datails">
+                <div class="input-box">
+                    Nome Completo
+                    <input type="text" name="txtNome" id="txtNome" placeholder="Digite o nome" required>
+                </div>
+                <div class="input-box">
+                    Email
+                    <input type="email" name="txtEmail" id="txtEmail" placeholder="Digite o email" required>
+                </div>
+                <div class="input-box">
+                    CPF
+                    <input type="text" name="txtCPF" id="txtCPF" placeholder="XXX.XXX.XXX-XX" required>
+                </div>
+                <div class="input-box">
+                    Telefone
+                    <input type="text" name="txtTel" id="txtTel" placeholder="+XX (XX) XXXXX-XXXX" required>
+                </div>
+                <div class="input-box">
+                    Endereço
+                    <input type="text" name="txtEnd" id="txtEnd" placeholder="Digite o endereço" required>
+                </div>
+                <div class="input-box">
+                    Senha
+                    <input type="password" name="txtSenha" id="txtSenha" placeholder="Digite a senha" required>
+                </div>
+                <div class="input-box">
+                    Confirme a senha
+                    <input type="password" name="txtConfirm" id="txtConfirm" placeholder="Confirme a senha" required>
+                </div>
+                <div class="button">
+                    <input type="button" value="cadastrar" onclick="Verificar( )">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    function Verificar( )
+    {
+       
+        var n, e, cpf, tel, senha, confsenha, end;
+       
+        n = document.getElementById("txtNome").value ;
+        if ( n.length == 0 )
+        {
+            alert("Preencha o campo Nome Completo!");
+            document.form1.txtNome.style.background = "#E9967A" ;
+            document.form1.txtNome.focus () ;
+            return false;
+        }
+ 
+        e = document.getElementById("txtEmail").value ;
+        if ( e.length == 0 )
+        {
+            alert("Preencha o campo Email!");
+            document.form1.txtEmail.style.background = "#E9967A" ;
+            document.form1.txtEmail.focus () ;
+            return false;
+        }
+        cpf = document.getElementById("txtCPF").value ;
+        if ( cpf.length == 0 )
+        {
+            alert("Preencha o campo CPF!");
+            document.form1.txtCPF.style.background = "#E9967A" ;
+            document.form1.txtCPF.focus () ;
+            return false;
+        }
+        tel = document.getElementById("txtTel").value ;
+        if ( tel.length == 0 )
+        {
+            alert("Preencha o campo Telefone!");
+            document.form1.txtTel.style.background = "#E9967A" ;
+            document.form1.txtTel.focus () ;
+            return false;
+        }
+        ende = document.getElementById("txtEnd").value ;
+        if ( ende.length == 0 )
+        {
+            alert("Preencha o campo Endereço!");
+            document.form1.txtEnd.style.background = "#E9967A" ;
+            document.form1.txtEnd.focus () ;
+            return false;
+        }
+        senha = document.getElementById("txtSenha").value ;
+        if ( senha.length == 0 )
+        {
+            alert("Preencha o campo Senha!");
+            document.form1.txtSenha.style.background = "#E9967A" ;
+            document.form1.txtSenha.focus () ;
+            return false;
+        }
+        confsenha = document.getElementById("txtConfirm").value ;
+        if ( confsenha.length == 0 )
+        {
+            alert("Preencha o campo Confirme a senha!");
+            document.form1.txtConfirm.style.background = "#E9967A" ;
+            document.form1.txtConfirm.focus () ;
+            return false;
+        }
+        document.form1.submit();
+    }
+</script>
+</html>
+
